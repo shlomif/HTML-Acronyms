@@ -7,7 +7,6 @@ use Test::More tests => 3;
 use HTML::Acronyms ();
 
 {
-
     my $acro = HTML::Acronyms->new(
         {
             dict => +{
