@@ -72,6 +72,11 @@ HTML::Acronyms - Generate HTML5/etc. markup for acronyms
         "no_link test",
     );
 
+=head1 DESCRIPTION
+
+Acronyms and other abbreviations can be quite cryptic ("What do you mean by 'WDYM')
+and this module aims to help expanding them in HTML5/XHTML5 documents.
+
 =head1 METHODS
 
 =head2 $acro->dict()
