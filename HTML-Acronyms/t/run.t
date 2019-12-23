@@ -2,7 +2,9 @@
 
 use strict;
 use warnings;
-use Test::More tests => 3;
+use Test2::V0;
+
+plan tests => 3;
 
 use HTML::Acronyms ();
 
@@ -28,14 +30,14 @@ use HTML::Acronyms ();
     ok( $acro, "initialized" );
 
     # TEST
-    is_deeply(
+    is(
         scalar( $acro->abbr( { key => 'WDYM', no_link => 1 } )->{html} ),
         qq#<abbr title="what do you mean">WDYM</abbr>#,
         "no_link test",
     );
 
     # TEST
-    is_deeply(
+    is(
         scalar( $acro->abbr( { key => 'SQL', no_link => 0 } )->{html} ),
 qq#<a href="https://en.wikipedia.org/wiki/SQL"><abbr title="Structured Query Language">SQL</abbr></a>#,
         "no_link test",
