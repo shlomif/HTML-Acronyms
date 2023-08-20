@@ -19,6 +19,10 @@ sub abbr
 
     my $key     = $args->{key};
     my $no_link = $args->{no_link};
+    if ( exists $args->{link} )
+    {
+        $no_link = ( !$args->{link} );
+    }
 
     my $rec = $self->dict->{$key};
 
@@ -74,8 +78,9 @@ HTML::Acronyms - Generate HTML5/etc. markup for acronyms
 
 =head1 DESCRIPTION
 
-Acronyms and other abbreviations can be quite cryptic ("What do you mean by 'WDYM')
-and this module aims to help expanding them in HTML5/XHTML5 documents.
+Acronyms and other abbreviations can be quite cryptic ("What do you mean by
+'WDYM'?") and this module aims to help expanding them in HTML5/XHTML5
+documents.
 
 =head1 METHODS
 
@@ -83,7 +88,7 @@ and this module aims to help expanding them in HTML5/XHTML5 documents.
 
 Returns the hash ref that serves as the dictionary for the acronyms.
 
-=head2 $acro->abbr({ key => "SQL", no_link => 0,})
+=head2 $acro->abbr({ key => "SQL", link => 1, no_link => 0,})
 
 Returns a hash ref with an C<'html'> key.
 
